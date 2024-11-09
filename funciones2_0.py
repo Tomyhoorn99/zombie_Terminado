@@ -31,6 +31,7 @@ ataques = {
     "golpe": 15
 }
 
+
 # Función para obtener un número entero dentro de un rango
 def obtener_numero(mensaje, min_val, max_val):
     while True:
@@ -43,6 +44,7 @@ def obtener_numero(mensaje, min_val, max_val):
         except ValueError:
             print("ERROR. Por favor ingresa un número.")
 
+
 # Función para elegir clase del personaje
 def elegir_clase_personaje():
     print("\nElige la clase de tu personaje:")
@@ -54,6 +56,7 @@ def elegir_clase_personaje():
         if clase_opcion in clases:
             clase, vida = clases[clase_opcion]
             return clase, vida
+
 
 # Función para configurar al personaje
 def configurar_personaje():
@@ -78,6 +81,7 @@ def configurar_personaje():
         "puntos": puntos,
         "arma": arma
     }
+
 
 # Función de compra de objetos (arma o vendas)
 def comprar(personaje):
@@ -123,6 +127,7 @@ def comprar(personaje):
         else:
             print("\nNo tienes suficientes puntos para comprar estas vendas.")
 
+
 # Función de combate para un personaje
 def combate(personaje):
     impacto = random.choice(list(puntos_impacto.keys()))
@@ -131,6 +136,7 @@ def combate(personaje):
     
     print(f"\n{personaje['nombre']} dispara con {personaje['arma']} y hace un disparo en el/la {impacto} del zombie.")
     print(f"Ganas {puntos_ganados} puntos.")
+
 
 # Función para ataque del zombie
 def ataque_zombie(personaje):
@@ -142,6 +148,7 @@ def ataque_zombie(personaje):
     if personaje['vida'] <= 0:
         personaje['vida'] = 0  # Asegurarse de que la vida no sea negativa
         print(f"{personaje['nombre']} ha sido derrotado por el zombie.")
+
 
 # Función para mostrar el historial de personajes
 def mostrar_historial(historial_personajes):
